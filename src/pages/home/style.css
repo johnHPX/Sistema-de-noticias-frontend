@@ -1,0 +1,60 @@
+/* Home Style */
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.no-content {
+    background-color: rgb(32, 32, 87);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 2% 0;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.no-content h2 {
+    color: white;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 2em;
+}
+
+.no-content h3 {
+    color: white;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.container-news {
+    display: flex;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 500px) {
+    .no-content {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+}

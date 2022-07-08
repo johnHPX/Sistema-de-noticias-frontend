@@ -1,0 +1,14 @@
+/* STYLE FOOTER COMPONENT*/
+
+.footer-container {
+    width: 100%;
+    background-color: rgb(110, 33, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-container p {
+    color: white;
+}

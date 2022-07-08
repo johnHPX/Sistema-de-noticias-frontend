@@ -1,0 +1,56 @@
+/* STYLE HEADER COMPONENT*/
+
+.header-container {
+    background-color: rgb(110, 33, 31);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.logo {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 a {
+    color: rgb(110, 97, 97);
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-container {
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .header-container {
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .header-container {
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+}

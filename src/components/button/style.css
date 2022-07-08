@@ -1,0 +1,20 @@
+/* STYLE BUTTON COMPONENT*/
+
+.botao {
+    padding: 20px 60px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px 10px;
+    background-color: chocolate;
+}
+
+.botao a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.botao:hover {
+    background-color: rgb(131, 44, 44);
+}

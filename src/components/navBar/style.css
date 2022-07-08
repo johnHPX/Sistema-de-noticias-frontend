@@ -1,0 +1,72 @@
+/* STYLE NAVBAR COMPONENT*/
+
+.navbar {
+    flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.navbar ul li a:hover {
+    color: rgb(45, 130, 151);
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .navbar {
+        margin-top: 5%;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .navbar {
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        width: 100%;
+    }
+
+    .navbar li a {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        width: 100%;
+    }
+
+
+    .navbar li a {
+        font-size: 0.9em;
+    }
+
+}
