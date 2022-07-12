@@ -1,1 +1,105 @@
 /* RegisterCategory Style */
+
+.registerCategory {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.registerCategory-main {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.formCategory-main {
+    width: 50%;
+}
+
+.list-category {
+    width: 40%;
+    padding: 10px;
+    background-color: rgb(20, 47, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.list-category h2 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 5%;
+}
+
+.list-category ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.list-category ul li {
+    flex-grow: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+    margin: 2%;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.list-category ul li p {
+    text-transform: uppercase;
+}
+
+.list-category ul li a {
+    color: rgb(156, 133, 28);
+    margin: 0 5px;
+}
+
+.list-category ul li a:hover {
+    color: rgb(83, 73, 29);
+}
+
+.list-category ul li button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(177, 36, 18);
+    cursor: pointer;
+}
+
+.list-category ul li button:hover {
+    color: rgb(100, 36, 27);
+}
+
+@media only screen and (max-width: 700px) {
+    .formCategory-main {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    .list-category {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .formCategory-main {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    .list-category {
+        width: 100%;
+    }
+}

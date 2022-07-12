@@ -1,1 +1,14 @@
 /* EditNews Style */
+
+.editNews {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.editNews-main {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

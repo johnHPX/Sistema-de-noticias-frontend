@@ -5,7 +5,7 @@ import "./style.css"
 function Button(prop: { path: string, textButton: string, color?: string }) {
     return (
         <>
-            <button className="botao"><Link to={prop.path}>{prop.textButton}</Link></button>
+            <button className="botao" style={{ color: prop.color }}><Link to={prop.path}>{prop.textButton}</Link></button>
         </>
     )
 }

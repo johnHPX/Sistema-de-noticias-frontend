@@ -1,1 +1,169 @@
 /* STYLE FORMNEWS COMPONENT*/
+
+.form-news {
+    width: 80%;
+}
+
+.form-news fieldset {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.form-news fieldset legend {
+    font-size: 3em;
+    color: white;
+}
+
+.division1 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    padding: 10px;
+}
+
+.division1 label {
+    width: 80%;
+    margin: 5% 0;
+}
+
+.division1 label p {
+    font-size: 1.4em;
+    margin: 5px 0;
+    color: white;
+}
+
+.division1 label input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.division1 label select {
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 70%;
+    margin: 5% 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.send {
+    width: 40%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(41, 49, 65);
+    margin: auto;
+}
+
+.send:hover {
+    color: white;
+    background-color: rgb(60, 93, 158);
+}
+
+.division2 {
+    width: 50%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+}
+
+
+.division2 label {
+    width: 80%;
+    margin: 5% 0;
+}
+
+.division2 label p {
+    font-size: 1.4em;
+    margin: 5px 0;
+    color: white;
+}
+
+.division2 label input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.division2 textarea {
+    margin: 5% 0;
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    font-size: 1.1em;
+    outline: none;
+    border-radius: 20px;
+    resize: none;
+}
+
+.addNewContent {
+    display: inline-block;
+    background-color: rgb(161, 53, 53);
+    width: 30%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.addNewContent:hover {
+    background-color: rgb(58, 13, 13);
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .division1 {
+        width: 100%;
+
+    }
+
+    .division1 label {
+        width: 100%;
+    }
+
+    .division1 label input[type="text"] {
+        width: 100%;
+    }
+
+    .division1 label select {
+        width: 100%;
+    }
+
+    .send {
+        width: 100%;
+    }
+
+    .division2 {
+        width: 100%;
+    }
+
+    .division2 label input[type="text"] {
+        width: 100%;
+    }
+
+    .addNewContent {
+        width: 100%;
+    }
+}

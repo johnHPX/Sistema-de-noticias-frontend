@@ -5,16 +5,16 @@
     cursor: pointer;
     border: none;
     border-radius: 10px 10px;
-    background-color: chocolate;
+    background-color: rgb(44, 51, 148);
 }
 
 .botao a {
-    display: block;
+    display: inline-block;
     width: 100%;
     text-decoration: none;
     color: white;
 }
 
 .botao:hover {
-    background-color: rgb(131, 44, 44);
+    background-color: rgb(31, 25, 63);
 }

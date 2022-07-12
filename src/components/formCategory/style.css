@@ -1,1 +1,47 @@
 /* STYLE FORMCATEGORY COMPONENT*/
+
+.form-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-category fieldset {
+    padding: 10px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-category fieldset legend {
+    color: rgb(121, 84, 35);
+}
+
+.form-category label {
+    font-size: 1.5em;
+    color: white;
+    margin-right: 2%;
+}
+
+#category {
+    padding: 10px;
+    width: 70%;
+    outline: none;
+    border: none;
+}
+
+.form-category button {
+    margin-top: 5%;
+    padding: 5px 30px;
+    cursor: pointer;
+    background-color: rgb(32, 49, 124);
+    border: none;
+    color: white;
+}
+
+.form-category button:hover {
+    color: aqua;
+    background-color: rgba(32, 49, 124, 0.5);
+}

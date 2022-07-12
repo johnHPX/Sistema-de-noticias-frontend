@@ -1,1 +1,14 @@
 /* EditCategory Style */
+
+.editCategory {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.editCategory-main {
+    flex-grow: 1;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

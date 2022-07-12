@@ -2,17 +2,20 @@ import React, { useState } from "react"
 import { DataNews } from "../../pages/home"
 import "./style.css"
 import axios from "axios"
+import { CategoryData } from "../../pages/registerCategory"
+
+export type State = React.Dispatch<React.SetStateAction<DataNews>>
 
 //SearchEngine componente para buscar dados
-function SearchEngine(prop: { textInput: string, urlAPI: string, dataAPI: React.Dispatch<React.SetStateAction<DataNews>>, entityAPI: string }) {
+function SearchEngine(prop: { textInput?: string, urlAPI?: string, dataAPI?: State }) {
     const [inputValue, setInputValue] = useState("")
 
     const getInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault()
         const value = event.target.value
         if (value.length == 0) {
-            axios.get(prop.urlAPI).then((response) => {
-                prop.dataAPI(response.data)
+            axios.get(prop.urlAPI as string).then((response) => {
+                prop.dataAPI?.(response.data)
             })
         }
         setInputValue(value)
@@ -21,15 +24,9 @@ function SearchEngine(prop: { textInput: string, urlAPI: string, dataAPI: React.
     const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if (inputValue.length > 0) {
-            if (prop.entityAPI == "news") {
-                axios.get(`http://localhost:4083/noticias/${inputValue}/list?mid=ok`).then((response) => {
-                    prop.dataAPI(response.data)
-                })
-            } else if (prop.entityAPI == "category") {
-                axios.get(`http://localhost:4083/categoria/${inputValue}?mid=ok`).then((response) => {
-                    prop.dataAPI(response.data)
-                })
-            }
+            axios.get(`http://localhost:4083/noticias/${inputValue}/list?mid=ok`).then((response) => {
+                prop.dataAPI?.(response.data)
+            })
         }
     }
 
