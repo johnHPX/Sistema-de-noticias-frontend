@@ -5,6 +5,7 @@ import Footer from "../../components/footer"
 import FormCategory from "../../components/formCategory"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
+import { APIHost } from "../../main"
 import "./style.css"
 
 interface category {
@@ -29,7 +30,7 @@ function RegisterCategory() {
         text: "register news"
     }]
 
-    const [urlAPI, setUrlAPI] = useState<string>("http://localhost:4083/categorias?mid=ok")
+    const urlAPI = `${APIHost}categorias?mid=ok`
     const [categorysData, setCategorysData] = useState<CategoryData>({ count: 0, categorias: [], mid: "" })
 
     useEffect(() => {
@@ -41,7 +42,7 @@ function RegisterCategory() {
     function deleteCategory(event: React.MouseEvent<HTMLButtonElement>, id: string) {
         const resp = window.prompt("você que realmente deletar essa categoria? [sim/nao]")
         if (resp == "sim") {
-            axios.delete(`http://localhost:4083/categoria/${id}/remove`)
+            axios.delete(`${APIHost}categoria/${id}/remove`)
                 .then(response => {
                     console.log(response)
                     window.alert("Deletado com sucesso!")

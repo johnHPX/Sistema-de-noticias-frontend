@@ -3,8 +3,6 @@ import NavBar from "../navBar"
 import SearchEngine, { State } from "../searchEngine"
 import "./style.css"
 import { MenuLink } from "../navBar/index"
-import { DataNews } from "../../pages/home"
-import { CategoryData } from "../../pages/registerCategory"
 
 
 // Header componente para cabeçario da pagina

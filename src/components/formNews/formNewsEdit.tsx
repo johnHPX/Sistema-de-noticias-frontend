@@ -1,21 +1,8 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { APIHost } from "../../main"
 import { CategoryData } from "../../pages/registerCategory"
 import "./style.css"
-
-
-interface Content {
-    cid: string
-    subTitulo: string
-    texto: string
-}
-
-interface News {
-    id: string
-    titulo: string
-    conteudos: Content[]
-    categoria: string
-}
 
 
 function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
@@ -29,7 +16,7 @@ function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:4083/noticia/${prop.id}/find?mid=ok`)
+        axios.get(`${APIHost}noticia/${prop.id}/find?mid=ok`)
             .then(response => {
                 setTitleInputValue(response.data.titulo)
                 setCategoryInputValue(response.data.categoria)
@@ -75,10 +62,6 @@ function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
     const addNewNews = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        console.log(cidsValues)
-        console.log(subTitleInputValue)
-        console.log(textInputValue)
-
         if (titleInputValue == "" && categoryInputValue == "" && subTitleInputValue.length == 0 && textInputValue.length == 0) {
             alert("prencha todos os dados!")
             return
@@ -116,7 +99,7 @@ function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
             mid: "ok"
         }
 
-        axios.put(`http://localhost:4083/noticia/${prop.id}/update`, newsRequest)
+        axios.put(`${APIHost}noticia/${prop.id}/update`, newsRequest)
             .then(response => {
                 alert("A atualização foi realizada com sucesso")
                 console.log(response)
@@ -131,7 +114,7 @@ function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
     return (
         <form className="form-news" onSubmit={addNewNews}>
             <fieldset>
-                <legend>Cadastro de Notícia</legend>
+                <legend>Edit News</legend>
                 <div className="division1">
                     <label>
                         <p>Titulo</p>

@@ -4,6 +4,7 @@ import Footer from "../../components/footer"
 import FormNews from "../../components/formNews"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
+import { APIHost } from "../../main"
 import { CategoryData } from "../registerCategory"
 import "./style.css"
 
@@ -13,7 +14,7 @@ function RegisterNews() {
     const [categoryData, setCategoryData] = useState<CategoryData>({ count: 0, mid: "", categorias: [] })
 
     useEffect(() => {
-        axios.get("http://localhost:4083/categorias")
+        axios.get(`${APIHost}categorias`)
             .then(response => {
                 setCategoryData(response.data)
             })

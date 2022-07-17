@@ -5,6 +5,7 @@ import CardNews from "../../components/cardNews"
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
+import { APIHost } from "../../main"
 import "./style.css"
 
 interface Content {
@@ -28,7 +29,7 @@ export interface DataNews {
 
 // Home principal página da aplicação, aqui serão exibidas as notícias.
 function Home() {
-    const [urlAPI, setUrlAPI] = useState<string>("http://localhost:4083/noticias?mid=ok")
+    const urlAPI = `${APIHost}noticias?mid=ok`
     const [news, setNews] = useState<DataNews>({ count: 0, mid: "", noticias: [] })
 
     useEffect(() => {

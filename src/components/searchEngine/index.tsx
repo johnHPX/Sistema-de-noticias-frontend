@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { DataNews } from "../../pages/home"
 import "./style.css"
 import axios from "axios"
-import { CategoryData } from "../../pages/registerCategory"
+import { APIHost } from "../../main"
 
 export type State = React.Dispatch<React.SetStateAction<DataNews>>
 
@@ -24,7 +24,7 @@ function SearchEngine(prop: { textInput?: string, urlAPI?: string, dataAPI?: Sta
     const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if (inputValue.length > 0) {
-            axios.get(`http://localhost:4083/noticias/${inputValue}/list?mid=ok`).then((response) => {
+            axios.get(`${APIHost}noticias/${inputValue}/list?mid=ok`).then((response) => {
                 prop.dataAPI?.(response.data)
             })
         }

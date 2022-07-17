@@ -5,6 +5,7 @@ import Footer from "../../components/footer"
 import FormNewsEdit from "../../components/formNews/formNewsEdit"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
+import { APIHost } from "../../main"
 import { CategoryData } from "../registerCategory"
 import "./style.css"
 
@@ -36,11 +37,10 @@ function EditNews() {
         mid: string
     }
 
-    const [newsData, setNewsData] = useState<News>({ id: "", categoria: "", conteudos: [], titulo: "", mid: "" })
     const [dataCategory, setDataCategory] = useState<CategoryData>({ categorias: [], count: 0, mid: "" })
 
     useEffect(() => {
-        axios.get("http://localhost:4083/categorias")
+        axios.get(`${APIHost}categorias`)
             .then(response => {
                 setDataCategory(response.data)
             })

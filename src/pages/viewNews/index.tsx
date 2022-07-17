@@ -5,6 +5,7 @@ import Button from "../../components/button"
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
+import { APIHost } from "../../main"
 import "./style.css"
 
 // ViewNews 
@@ -33,7 +34,7 @@ function ViewNews() {
     const { id } = useParams()
 
     useEffect(() => {
-        axios.get(`http://localhost:4083/noticia/${id}/find?mid=ok`)
+        axios.get(`${APIHost}noticia/${id}/find?mid=ok`)
             .then(response => {
                 setNewsData(response.data)
             })
@@ -43,7 +44,7 @@ function ViewNews() {
     const deleteNews = (event: React.MouseEvent<HTMLButtonElement>, id: string) => {
         const resp = window.prompt("você que realmente deletar essa categoria? [sim/nao]")
         if (resp == "sim") {
-            axios.delete(`http://localhost:4083/noticia/${id}/remove`)
+            axios.delete(`${APIHost}noticia/${id}/remove`)
                 .then(response => {
                     console.log(response)
                     window.alert("Deletado com sucesso!")

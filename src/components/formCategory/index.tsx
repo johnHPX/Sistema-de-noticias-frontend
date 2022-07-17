@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { APIHost } from "../../main"
 import "./style.css"
 
 export interface CategoryRequest {
@@ -26,7 +27,7 @@ function FormCategory(prop: { id?: string }) {
 
             if (prop.id) {
                 event.preventDefault()
-                axios.put(`http://localhost:4083/categoria/${prop.id}/update`, req)
+                axios.put(`${APIHost}categoria/${prop.id}/update`, req)
                     .then(response => {
                         console.log(response)
                         alert("categoria foi editada com sucesso!")
@@ -36,7 +37,7 @@ function FormCategory(prop: { id?: string }) {
                         alert(error)
                     })
             } else {
-                axios.post("http://localhost:4083/categoria", req)
+                axios.post(`${APIHost}categoria`, req)
                     .then(response => {
                         console.log(response)
                         alert("categoria foi cadastrada com sucesso!")
@@ -54,7 +55,7 @@ function FormCategory(prop: { id?: string }) {
     if (prop.id) {
 
         useEffect(() => {
-            axios.get(`http://localhost:4083/categoria/${prop.id}/find`)
+            axios.get(`${APIHost}categoria/${prop.id}/find`)
                 .then(response => {
                     setInputValue(response.data.kind)
                 })

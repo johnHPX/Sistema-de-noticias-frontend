@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
+import { APIHost } from "../../main"
 import { CategoryData } from "../../pages/registerCategory"
 import "./style.css"
 
@@ -59,7 +60,7 @@ function FormNews(prop: { categoryData: CategoryData }) {
             mid: string
         }
 
-
+        // subtitulos e texto tem o mesmo tamanho, logo só é necessario um loop
         let content: content[] = []
         subTitleInputValue.forEach((v, i) => {
             let o: content = {
@@ -77,7 +78,7 @@ function FormNews(prop: { categoryData: CategoryData }) {
             mid: "ok"
         }
 
-        axios.post("http://localhost:4083/noticia", newsRequest)
+        axios.post(`${APIHost}noticia`, newsRequest)
             .then(response => {
                 alert("o Cadastro foi Realizado Com Sucesso!")
                 console.log(response)
