@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import AppRouter from './router/appRouter'
 import './global/global.css'
 
-export const APIHost = "https://sistema-de-noticias-api.dev.hardproxdev.com.br/"
+export const APIHost = "https://api-news-dm1j.onrender.com"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
