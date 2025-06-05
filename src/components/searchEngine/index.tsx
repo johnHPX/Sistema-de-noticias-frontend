@@ -4,6 +4,7 @@ import "./style.css"
 import axios from "axios"
 import { APIHost } from "../../main"
 
+
 export type State = React.Dispatch<React.SetStateAction<DataNews>>
 
 //SearchEngine componente para buscar dados
@@ -33,7 +34,7 @@ function SearchEngine(prop: { textInput?: string, urlAPI?: string, dataAPI?: Sta
     return (
         <form className="form-search" onSubmit={onSubmitForm}>
             <input type="search" id="search" placeholder={prop.textInput} onChange={getInputChange} />
-            <button type="submit"><img src="https://img.icons8.com/avantgarde/100/000000/experimental-search-avantgarde.png" /></button>
+            <button type="submit"><img src="assets/search.svg" alt="buscar" /></button>
         </form>
     )
 }
