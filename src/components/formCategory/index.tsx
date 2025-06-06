@@ -77,7 +77,7 @@ function FormCategory(prop: { id?: string }) {
         )
     } else {
         return (
-            <form className="form-category" onSubmit={addNewCategory}>
+            <form className="form-category" onSubmit={addNewCategory} method="POST">
                 <fieldset>
                     <legend>Register Category</legend>
                     <label htmlFor="category">Kind</label>
