@@ -67,6 +67,22 @@
         width: 100%;
     }
 
+    .viewNews-main h1 {
+        font-size: 1.5em;
+    }
+
+    .viewNews-main h2 {
+        font-size: 1.2em;
+    }
+
+    .viewNews-main h3 {
+        font-size: 1em;
+    }
+
+    .viewNews-main p {
+        font-size: .7em;
+    }
+
     .actions {
         width: 100%;
     }
