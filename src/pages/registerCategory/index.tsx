@@ -1,7 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Footer from "../../components/footer"
 import FormCategory from "../../components/formCategory"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
@@ -82,7 +81,6 @@ function RegisterCategory() {
                     </ul>
                 </div>
             </main>
-            <Footer />
         </div>
     )
 }

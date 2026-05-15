@@ -6,6 +6,8 @@ import RegisterCategory from "../pages/registerCategory"
 import RegisterNews from "../pages/registerNews"
 import ViewNews from "../pages/viewNews"
 
+import Layout from "../layout/layout"
+
 
 // AppRouter configura as rotas da aplicação
 function AppRouter() {
@@ -13,12 +15,16 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/category" element={<RegisterCategory />}></Route>
-        <Route path="/news" element={<RegisterNews />}></Route>
-        <Route path="/news/:id" element={<ViewNews />}></Route>
-        <Route path="/category/:id/edit" element={<EditCategory />}></Route>
-        <Route path="/news/:id/edit" element={<EditNews />}></Route>
+
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/category" element={<RegisterCategory />}></Route>
+          <Route path="/news" element={<RegisterNews />}></Route>
+          <Route path="/news/:id" element={<ViewNews />}></Route>
+          <Route path="/category/:id/edit" element={<EditCategory />}></Route>
+          <Route path="/news/:id/edit" element={<EditNews />}></Route>
+        </Route>
+
       </Routes>
     </BrowserRouter>
   )

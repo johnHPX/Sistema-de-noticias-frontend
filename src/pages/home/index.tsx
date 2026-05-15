@@ -2,7 +2,6 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import Button from "../../components/button"
 import CardNews from "../../components/cardNews"
-import Footer from "../../components/footer"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
 import { APIHost } from "../../main"
@@ -72,8 +71,6 @@ function Home() {
                         </div>
                 }
             </main>
-
-            <Footer />
         </div>
     )
 }

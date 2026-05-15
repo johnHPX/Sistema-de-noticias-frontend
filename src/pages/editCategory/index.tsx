@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import Footer from "../../components/footer"
 import FormCategory from "../../components/formCategory"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
@@ -25,7 +24,7 @@ function EditCategory() {
             <main className="editCategory-main">
                 <FormCategory id={id} />
             </main>
-            <Footer />
+
         </div>
     )
 }

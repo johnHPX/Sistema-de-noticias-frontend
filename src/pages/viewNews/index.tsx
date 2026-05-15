@@ -2,7 +2,6 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Button from "../../components/button"
-import Footer from "../../components/footer"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
 import { APIHost } from "../../main"
@@ -77,7 +76,6 @@ function ViewNews() {
                 <Button path={`/news/${newsData.id}/edit`} textButton="Edit News" />
                 <button className="delete" onClick={(e) => deleteNews(e, newsData.id)}>Deletar</button>
             </div>
-            <Footer />
         </div>
     )
 }

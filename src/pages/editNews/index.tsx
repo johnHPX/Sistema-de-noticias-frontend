@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import Footer from "../../components/footer"
 import FormNewsEdit from "../../components/formNews/formNewsEdit"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
@@ -56,7 +55,6 @@ function EditNews() {
             <main className="editNews-main">
                 <FormNewsEdit categoryData={dataCategory} id={id as string} />
             </main>
-            <Footer />
         </div>
     )
 }

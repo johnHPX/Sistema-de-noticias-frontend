@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Footer from "../../components/footer"
 import FormNews from "../../components/formNews"
 import Header from "../../components/header"
 import { MenuLink } from "../../components/navBar"
@@ -39,7 +38,6 @@ function RegisterNews() {
             <main className="registerNews-main">
                 <FormNews categoryData={categoryData} />
             </main>
-            <Footer />
         </div>
     )
 }
