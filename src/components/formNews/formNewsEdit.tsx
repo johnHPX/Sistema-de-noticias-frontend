@@ -4,8 +4,11 @@ import { APIHost } from "../../main"
 import { CategoryData } from "../../pages/registerCategory"
 import "./style.css"
 
+import { useNavigate } from "react-router-dom"
 
 function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
+
+    const navigate = useNavigate()
 
     const [count, setCount] = useState<number[]>([0])
     const [titleInputValue, setTitleInputValue] = useState("")
@@ -103,7 +106,7 @@ function FormNewsEdit(prop: { categoryData: CategoryData, id: string }) {
             .then(response => {
                 alert("A atualização foi realizada com sucesso")
                 console.log(response)
-                window.location.href = `/news/${prop.id}`
+                navigate(`/news/${prop.id}`)
             })
             .catch(error => {
                 alert("Erro ao atualizar!")
