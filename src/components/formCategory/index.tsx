@@ -3,12 +3,16 @@ import React, { useEffect, useState } from "react"
 import { APIHost } from "../../main"
 import "./style.css"
 
+import { useNavigate } from "react-router-dom"
+
 export interface CategoryRequest {
     kind: string
     mid: string
 }
 
 function FormCategory(prop: { id?: string, onSuccess?: () => void }) {
+
+    const navigate = useNavigate()
 
     const [inputValue, setInputValue] = useState("")
 
@@ -34,6 +38,7 @@ function FormCategory(prop: { id?: string, onSuccess?: () => void }) {
                 .then(() => {
                     alert("categoria foi editada com sucesso!")
                     prop.onSuccess?.()
+                    navigate("/category")
                 })
                 .catch(error => alert(error))
 

@@ -7,6 +7,7 @@ import { MenuLink } from "../../components/navBar"
 import { APIHost } from "../../main"
 import "./style.css"
 
+
 interface category {
     id: string,
     kind: string
@@ -19,6 +20,7 @@ export interface CategoryData {
 }
 
 function RegisterCategory() {
+
 
     const menuLinks: MenuLink[] = [
         { url: "/", text: "home" },
@@ -44,7 +46,7 @@ function RegisterCategory() {
     }, [])
 
     function deleteCategory(event: React.MouseEvent<HTMLButtonElement>, id: string) {
-        const resp = window.prompt("você que realmente deletar essa categoria? [sim/nao]")
+        const resp = window.prompt("você quer realmente deletar essa categoria? [sim/nao]")
         if (resp == "sim") {
             axios.delete(`${APIHost}categoria/${id}/remove`)
                 .then(() => {
