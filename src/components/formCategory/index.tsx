@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react"
 import { APIHost } from "../../main"
 import "./style.css"
 
+import { useNavigate } from "react-router-dom"
+
 export interface CategoryRequest {
     kind: string
     mid: string
@@ -11,6 +13,7 @@ export interface CategoryRequest {
 function FormCategory(prop: { id?: string }) {
 
     const [inputValue, setInputValue] = useState("")
+    const navigate = useNavigate()
 
     const getInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault()
@@ -19,7 +22,6 @@ function FormCategory(prop: { id?: string }) {
     }
 
     const addNewCategory = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
         if (inputValue != "") {
             const req: CategoryRequest = {
                 kind: inputValue,
@@ -32,17 +34,18 @@ function FormCategory(prop: { id?: string }) {
                     .then(response => {
                         console.log(response)
                         alert("categoria foi editada com sucesso!")
-                        window.location.href = "/category"
+                        navigate("/category")
                     })
                     .catch(error => {
                         alert(error)
                     })
             } else {
+                event.preventDefault()
                 axios.post(`${APIHost}categoria`, req)
                     .then(response => {
                         console.log(response)
                         alert("categoria foi cadastrada com sucesso!")
-                        window.location.href = "/category"
+                        navigate("/category")
                     })
                     .catch(error => {
                         alert(error)

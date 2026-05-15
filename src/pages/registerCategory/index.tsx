@@ -7,6 +7,8 @@ import { MenuLink } from "../../components/navBar"
 import { APIHost } from "../../main"
 import "./style.css"
 
+import { useNavigate } from "react-router-dom"
+
 interface category {
     id: string,
     kind: string
@@ -32,6 +34,8 @@ function RegisterCategory() {
     const urlAPI = `${APIHost}categorias?mid=ok`
     const [categorysData, setCategorysData] = useState<CategoryData>({ count: 0, categorias: [], mid: "" })
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         axios.get(urlAPI).then((response) => {
             setCategorysData(response.data)
@@ -41,11 +45,12 @@ function RegisterCategory() {
     function deleteCategory(event: React.MouseEvent<HTMLButtonElement>, id: string) {
         const resp = window.prompt("você que realmente deletar essa categoria? [sim/nao]")
         if (resp == "sim") {
+            event.preventDefault()
             axios.delete(`${APIHost}categoria/${id}/remove`)
                 .then(response => {
                     console.log(response)
                     window.alert("Deletado com sucesso!")
-                    window.location.href = "/category"
+                    navigate("/category")
                 })
                 .catch(error => console.log(error))
         }
