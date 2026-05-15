@@ -19,6 +19,7 @@ function FormCategory(prop: { id?: string }) {
     }
 
     const addNewCategory = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
         if (inputValue != "") {
             const req: CategoryRequest = {
                 kind: inputValue,
@@ -41,6 +42,7 @@ function FormCategory(prop: { id?: string }) {
                     .then(response => {
                         console.log(response)
                         alert("categoria foi cadastrada com sucesso!")
+                        window.location.href = "/category"
                     })
                     .catch(error => {
                         alert(error)
